@@ -8,5 +8,13 @@ task({ :sample_data => :environment }) do
   movie.description = Faker::Movie.quote
   movie.save
 end
+Director.destroy_all
+10.times do
+  director = Director.new
+  director.name = Faker::Name.name
+  director.dob = Faker::Date.in_date_period
+  director.bio = Faker::Movie.quote
+  director.save
+end
 pp "created"
 end

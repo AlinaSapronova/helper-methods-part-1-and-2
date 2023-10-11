@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Directors</h1>
+
+<div id="directors">
+<Table border="1">
+    <tr>
+  <th><strong>Name</strong></th>
+  <th> <strong>Dob</strong></th>
+  <th> <strong>Bio</strong></th>
+  <th></th>
+</tr>
+  <% @directors.each do |director| %>
+    <%= render director %>
+  <% end %>
+  </table>
+</div>
+
+<%= link_to "New director", new_director_path %>
