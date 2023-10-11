@@ -51,10 +51,9 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    the_id = params.fetch(:id)
-    the_movie = Movie.where({ :id => the_id }).first
+    @movie = Movie.where({ :id => params.fetch(:id) }).first
 
-    the_movie.destroy
+    @movie.destroy
 
     redirect_to movies_url, :notice => "Movie deleted successfully."
   end
